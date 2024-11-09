@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucila Perazzo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #fbf8cc;
+        --secondary-color: #555;
+        --text-color: #03045e;
+        --font-family: Poppins, sans-serif;
+        --font-size: 28px;
+        --hero-line-height: 100px;
+        --line-height: 44px;
+        --hero-font-size: 64px;
+        --title-font-size: 100px;
+        --font-weight-bold: 800;
+        --font-weight-semibold: 500;
+        --font-weight-regular: 400;
+        --font-weight-light: 300;
+        --shadow-color: #03045e1a;
+      }
+      body {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+        margin: 0;
+        padding: 0;
+        line-height: var(--line-height);
+      }
+      nav {
+        box-shadow: 0px 4px 10px 1px var(--shadow-color);
+        position: sticky;
+        top: 0;
+        display: flex;
+        background-color: var(--primary-color);
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 100px;
+      }
+      nav a {
+        padding: 1rem;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      .hero-text h3 {
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-semibold);
+      }
+      .hero-text h1 {
+        font-size: var(--hero-font-size);
+        line-height: var(--hero-line-height);
+        margin: 17px 0;
+      }
+      nav h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      #nav-links {
+        font-size: 20px;
+      }
+      section {
+        font-size: var(--font-size);
+        padding: 2rem;
+      }
+      .title {
+        font-size: var(--title-font-size);
+        margin: 80px 0;
+      }
+      .container {
+        padding: 35px 100px;
+      }
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      .hero-text {
+        max-width: 700px;
+      }
+      .disclaimer {
+        font-style: italic;
+        font-weight: var(--font-weight-light);
+        margin-bottom: 80px;
+      }
+      .menu-button {
+        display: none;
+      }
+
+      #mobile-nav {
+        display: none;
+      }
+
+      .video-title {
+        margin: 10px 0;
+      }
+
+      .video-container {
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+      }
+
+      .video-container iframe {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .social-link {
+        display: block;
+        text-decoration-color: var(--text-color);
+      }
+
+      .social-link img {
+        height: 1em;
+        margin-right: 10px;
+      }
+
+      .social-link span {
+        color: var(--text-color);
+      }
+
+      footer {
+        height: 25vh;
+      }
+
+      #mobile-nav .nav-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        #desktop-nav {
+          display: none;
+          flex-direction: row;
+        }
+        #mobile-nav {
+          display: flex;
+          flex-direction: column;
+        }
+        .profile-image {
+          display: none;
+        }
+
+        #nav-links {
+          display: none;
+          flex-direction: column;
+        }
+        .menu-button {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <h1>Lucila Perazzo</h1>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <nav id="mobile-nav">
+      <div class="nav-section">
+        <h1>Lucila Perazzo</h1>
+        <a
+          href="javascript:void(0);"
+          class="menu-button"
+          onclick="toggleLinks()"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <section id="home" class="container">
+      <div class="hero">
+        <div class="hero-text">
+          <h3>Hi! I’m Lucila, an</h3>
+          <h1>English to (LATAM) Spanish Translator and Subtitler</h1>
+          <h3>based in Argentina.</h3>
+        </div>
+        <div class="profile-image">
+          <img src="images/profile.svg" alt="Lucila Perazzo" />
+        </div>
+      </div>
+    </section>
+    <section id="about" class="container">
+      <h2 class="title">About</h2>
+      <p>
+        I’m passionate about language and communication in all its forms. Over
+        the years, I've delved into these fields, studying translation, Spanish
+        proofreading, UX writing, subtitling, and starting a degree in school
+        librarianship. All this has given me a comprehensive understanding of
+        how words are used from various perspectives. The services I offer
+        include English to Latin American Spanish translation, proofreading,
+        localization, MTPE, subtitling, and transcription.
+      </p>
+    </section>
+    <section id="work" class="container">
+      <h2 class="title">Work</h2>
+      <p>
+        I’ve recently completed a 6-level subtitling specialization, where I
+        worked with Subtitle Edit and Ooona. Below are some of the videos I’ve
+        subtitled from English to Latin American Spanish or Argentinian Spanish
+        and vice versa, during the course.
+      </p>
+      <p class="disclaimer">
+        Copyright Disclaimer: The scenes subtitled are for demonstration
+        purposes only. All rights to the images, music, clips, and other
+        materials used belong to their respective owners. I do not claim
+        ownership over any third-party content used.
+      </p>
+      <div class="videos">
+        <h3 class="video-title">
+          El Encargado, Season 2, Episode 7 (2023). Spanish to English
+          subtitles.
+        </h3>
+        <div class="video-container">
+          <iframe
+            src="https://drive.google.com/file/d/1CzcbtA1iocgq3hMh-PhT9X5rN4c2DHL8/preview"
+            allow="autoplay"
+          ></iframe>
+        </div>
+
+        <h3 class="video-title">
+          Wanda Vision, Season 1, Episode 5 (2021). English to Latin American
+          Spanish subtitles.
+        </h3>
+        <div class="video-container">
+          <iframe
+            src="https://drive.google.com/file/d/1zlz_e9wLkr3ScGx6y9P-qMv9MvwBQlNi/preview"
+            allow="autoplay"
+          ></iframe>
+        </div>
+
+        <h3 class="video-title">
+          El robo del siglo (2020). Spanish to English subtitles.
+        </h3>
+        <div class="video-container">
+          <iframe
+            src="https://drive.google.com/file/d/1iNb_m2Qwol9v9hUtWuxJlvVON06PuXKI/preview"
+            allow="autoplay"
+          ></iframe>
+        </div>
+
+        <h3 class="video-title">
+          Deadpool 2 (2018). English to Spanish (Argentina) subtitles.
+        </h3>
+        <div class="video-container">
+          <iframe
+            src="https://drive.google.com/file/d/1DB8VNyXp0UnMCs_tGy0gKhw7ShnKVv2P/preview"
+            allow="autoplay"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="container">
+      <h2 class="title">Contact</h2>
+      <a
+        class="social-link"
+        href="www.linkedin.com/in/lucila-perazzo-7a452719a"
+      >
+        <img src="images/linkedin.svg" alt="LinkedIn" />
+        <span>Linkedin Profile</span>
+      </a>
+      <a class="social-link" href="mailto:trad.lucilaperazzo@gmail.com">
+        <img src="images/mail.svg" alt="Gmail" />
+        <span> trad.lucilaperazzo@gmail.com</span>
+      </a>
+    </section>
+    <footer></footer>
+    <script>
+      function toggleLinks() {
+        const links = document.getElementById('nav-links');
+        links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+      }
+    </script>
+  </body>
+</html>
