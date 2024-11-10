@@ -28,6 +28,20 @@
         --font-weight-regular: 400;
         --font-weight-light: 300;
         --shadow-color: #03045e1a;
+        --title-margin: 80px 0;
+        --hero-margin: 16px 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        :root {
+          --font-size: 14px;
+          --hero-line-height: normal;
+          --hero-font-size: 36px;
+          --line-height: normal;
+          --title-font-size: 28px;
+          --title-margin: 0;
+          --hero-margin: 0;
+        }
       }
       body {
         background-color: var(--primary-color);
@@ -60,7 +74,7 @@
       .hero-text h1 {
         font-size: var(--hero-font-size);
         line-height: var(--hero-line-height);
-        margin: 17px 0;
+        margin: var(--hero-margin);
       }
       nav h1 {
         margin: 0;
@@ -75,7 +89,7 @@
       }
       .title {
         font-size: var(--title-font-size);
-        margin: 80px 0;
+        margin: var(--title-margin);
       }
       .container {
         padding: 35px 100px;
@@ -123,9 +137,9 @@
       }
 
       .social-link {
-        max-width: 100%;
-        display: inline-block;
+        display: flex;
         text-decoration-color: var(--text-color);
+        align-items: center;
       }
 
       .social-link img {
@@ -135,10 +149,12 @@
 
       .social-link span {
         color: var(--text-color);
-        word-break: break-all;
         text-overflow: ellipsis;
       }
-      .menu-button {
+      .links-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
       }
 
       footer {
@@ -157,27 +173,8 @@
         width: 100%;
       }
       @media (max-width: 768px) {
-        body {
-          font-size: 16px;
-        }
-
         .container {
           padding: 10px;
-        }
-
-        .hero h3 {
-          font-size: 24px;
-        }
-
-        .hero h1 {
-          line-height: normal;
-          font-size: 48px;
-          margin: 10px 0;
-        }
-
-        .title {
-          font-size: 48px;
-          margin: 40px 0;
         }
 
         #desktop-nav {
@@ -312,18 +309,20 @@
       </div>
     </section>
     <section id="contact" class="container">
-      <h2 class="title">Contact</h2>
-      <a
-        class="social-link"
-        href="www.linkedin.com/in/lucila-perazzo-7a452719a"
-      >
-        <img src="images/linkedin.svg" alt="LinkedIn" />
-        <span>Linkedin Profile</span>
-      </a>
-      <a class="social-link" href="mailto:trad.lucilaperazzo@gmail.com">
-        <img src="images/mail.svg" alt="Gmail" />
-        <span> trad.lucilaperazzo@gmail.com</span>
-      </a>
+      <h2 class="title">Let's talk</h2>
+      <div class="links-container">
+        <a
+          class="social-link"
+          href="www.linkedin.com/in/lucila-perazzo-7a452719a"
+        >
+          <img src="images/linkedin.svg" alt="LinkedIn" />
+          <span>Linkedin Profile</span>
+        </a>
+        <a class="social-link" href="mailto:trad.lucilaperazzo@gmail.com">
+          <img src="images/mail.svg" alt="Gmail" />
+          <span> trad.lucilaperazzo@gmail.com</span>
+        </a>
+      </div>
     </section>
     <footer></footer>
     <script>
