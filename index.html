@@ -21,6 +21,7 @@
         --text-color: #03045e;
         --font-family: Poppins, sans-serif;
         --font-size: 28px;
+        --links-font-size: 20px;
         --hero-line-height: 100px;
         --line-height: 44px;
         --hero-font-size: 64px;
@@ -42,6 +43,7 @@
           --line-height: normal;
           --title-font-size: 28px;
           --title-margin: 0;
+          --links-font-size: 14px;
           --hero-margin: 0;
         }
       }
@@ -82,8 +84,11 @@
         margin: 0;
         font-size: 24px;
       }
-      #nav-links {
-        font-size: 20px;
+      .nav-links {
+        font-size: var(--links-font-size);
+      }
+      .nav-links a {
+        padding: 0 30px;
       }
       section {
         font-size: var(--font-size);
@@ -190,7 +195,7 @@
           display: none;
         }
 
-        #nav-links {
+        #mobile-nav-links {
           display: none;
           flex-direction: column;
         }
@@ -203,7 +208,7 @@
   <body>
     <nav id="desktop-nav">
       <h1>Lucila Perazzo</h1>
-      <div>
+      <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -216,16 +221,17 @@
         <a
           href="javascript:void(0);"
           class="menu-button"
+          id="menu-button"
           onclick="toggleLinks()"
         >
           <i class="fa fa-bars"></i>
         </a>
       </div>
-      <div id="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-links" id="mobile-nav-links">
+        <a href="#home" onclick="onClickLink()">Home</a>
+        <a href="#about" onclick="onClickLink()">About</a>
+        <a href="#work" onclick="onClickLink()">Work</a>
+        <a href="#contact" onclick="onClickLink()">Contact</a>
       </div>
     </nav>
     <section id="home" class="container">
@@ -328,10 +334,18 @@
     </section>
     <footer></footer>
     <script>
-      function toggleLinks() {
-        const links = document.getElementById('nav-links');
+      const links = document.getElementById('mobile-nav-links');
+      const menuButton = document.getElementById('menu-button');
+      const toggleLinks = () => {
         links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-      }
+        menuButton.innerHTML =
+          links.style.display === 'flex'
+            ? '<i class="fa fa-times"></i>'
+            : '<i class="fa fa-bars"></i>';
+      };
+      const onClickLink = () => {
+        links.style.display = 'none';
+      };
     </script>
   </body>
 </html>
