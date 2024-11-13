@@ -17,8 +17,9 @@
     <style>
       :root {
         --primary-color: #fbf8cc;
-        --secondary-color: #555;
+        --secondary-color: #f5ee84;
         --text-color: #03045e;
+        --dark-brown: #474306;
         --font-family: Poppins, sans-serif;
         --font-size: 28px;
         --links-font-size: 20px;
@@ -33,6 +34,7 @@
         --shadow-color: #03045e1a;
         --title-margin: 80px 0;
         --hero-margin: 16px 0;
+        --border-radius: 6px;
       }
 
       @media screen and (max-width: 768px) {
@@ -89,6 +91,26 @@
       }
       .nav-links a {
         padding: 0 30px;
+      }
+
+      .primary-button {
+        background-color: transparent;
+        color: var(--dark-brown);
+        border: 1px solid var(--dark-brown);
+        border-radius: var(--border-radius);
+        padding: calc(var(--links-font-size) / 2) var(--links-font-size);
+        position: relative;
+      }
+      .primary-button:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--border-radius);
+        left: var(--border-radius);
+        top: var(--border-radius);
+        z-index: -1;
+        background-color: var(--secondary-color);
       }
       section {
         font-size: var(--font-size);
@@ -245,6 +267,12 @@
           <img src="images/profile.svg" alt="Lucila Perazzo" />
         </div>
       </div>
+      <a
+        class="primary-button"
+        href="https://drive.google.com/file/d/1hErthEPDdCDWND7m9aTphnaMxDWHAPRF/view?usp=sharing"
+        target="_blank"
+        >Resume</a
+      >
     </section>
     <section id="about" class="container">
       <h2 class="title">About</h2>
@@ -321,7 +349,8 @@
       <div class="links-container">
         <a
           class="social-link"
-          href="www.linkedin.com/in/lucila-perazzo-7a452719a"
+          target="_blank"
+          href="https://www.linkedin.com/in/lucila-perazzo-7a452719a"
         >
           <img src="images/linkedin.svg" alt="LinkedIn" />
           <span>Linkedin Profile</span>
