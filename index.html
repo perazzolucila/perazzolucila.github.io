@@ -186,6 +186,26 @@
         flex-direction: column;
       }
 
+      .profile-image {
+        display: block;
+      }
+
+      .profile-image::before {
+        position: relative;
+        content: url('images/bars.svg');
+        z-index: 5;
+        bottom: 20%;
+        left: 15%;
+      }
+
+      .profile-image::after {
+        z-index: 5;
+        position: relative;
+        content: url('images/plus.svg');
+        top: -90%;
+        right: 15%;
+      }
+
       footer {
         height: 25vh;
       }
@@ -263,8 +283,8 @@
           <h1>English to (LATAM) Spanish Translator and Subtitler</h1>
           <h3>based in Argentina.</h3>
         </div>
-        <div class="profile-image">
-          <img src="images/profile.svg" alt="Lucila Perazzo" />
+        <div class="profile-image" alt="Lucila Perazzo">
+          <img src="images/profile.svg">
         </div>
       </div>
       <a
